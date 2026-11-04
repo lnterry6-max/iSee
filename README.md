@@ -36,7 +36,7 @@ Product illustrations are custom SVG concept renders. They are not real photogra
 
 - [x] Phase 1 — Product definition
 - [x] Phase 2 — Responsive concept website
-- [ ] Phase 2.1 — Browser/device QA and richer art
+- [ ] Phase 2.1 — In progress: mobile usability improvements and interactive cameraOS shutter (browser-device QA remains)
 - [ ] Phase 3 — Interactive cameraOS application prototype
 - [ ] Phase 4 — Real ML photo editing experiments
 - [ ] Phase 5 — Technical and design portfolio case study
@@ -44,3 +44,7 @@ Product illustrations are custom SVG concept renders. They are not real photogra
 ## Safety and intellectual honesty
 
 There is no checkout or commercial sale. Pricing is a hypothetical target, not a published offer or validated manufacturing estimate.
+
+## Phase 2.1 interaction notes
+
+The cameraOS shutter creates **simulated captures** and a temporary gallery preview in browser memory. It does not use a real camera or store photos. The scroll indicator, mobile menu, and focus controls support keyboard interaction. Reduced-motion settings disable decorative transitions.
