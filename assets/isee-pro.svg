@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" role="img" aria-label="iSee advanced fixed-lens camera concept"><defs>
+<linearGradient id="metal" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f9f8f4"/><stop offset=".27" stop-color="#d0ceca"/><stop offset=".6" stop-color="#9d9e9f"/><stop offset=".78" stop-color="#e3e3df"/><stop offset="1" stop-color="#92969a"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d4d6d7"/><stop offset=".3" stop-color="#3b3e42"/><stop offset=".7" stop-color="#999da0"/><stop offset="1" stop-color="#1e2227"/></linearGradient>
+<radialGradient id="rings"><stop stop-color="#303e59"/><stop offset=".3" stop-color="#10131b"/><stop offset=".65" stop-color="#272c33"/><stop offset=".8" stop-color="#06070a"/><stop offset="1" stop-color="#17191e"/></radialGradient>
+<radialGradient id="glass" cx=".38" cy=".34"><stop stop-color="#667b9c"/><stop offset=".28" stop-color="#131d30"/><stop offset=".53" stop-color="#080d17"/><stop offset=".85" stop-color="#08090d"/><stop offset="1" stop-color="#232a33"/></radialGradient>
+<radialGradient id="glasscenter" cx=".32" cy=".35"><stop stop-color="#647aa0"/><stop offset=".33" stop-color="#1d3554"/><stop offset=".7" stop-color="#070b15"/><stop offset="1" stop-color="#090a0d"/></radialGradient>
+<pattern id="knurl" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M1 0V6" stroke="#32363a" stroke-width="2"/><path d="M4 0V6" stroke="#e7e7e6" stroke-width="1"/></pattern>
+<linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f8f6"/><stop offset="1" stop-color="#dedfdd"/></linearGradient>
+</defs><rect width="760" height="500" rx="20" fill="#ececeb"/><g transform="translate(70 67) scale(0.96875 1)">
+<ellipse cx="332" cy="323" rx="290" ry="19" fill="#10161b" opacity=".11"/>
+<rect x="10" y="34" width="620" height="292" rx="43" fill="url(#metal)" stroke="#7d7d7b" stroke-width="3"/>
+<rect x="19" y="42" width="602" height="276" rx="35" fill="none" stroke="#fff" opacity=".56" stroke-width="2"/>
+<path d="M47 41 H580" stroke="#fff" stroke-width="5" opacity=".49" stroke-linecap="round"/>
+<rect x="82" y="22" width="96" height="15" rx="6" fill="url(#knurl)" stroke="#57595b" stroke-width="2"/>
+<rect x="224" y="25" width="62" height="12" rx="6" fill="#66686b" stroke="#d8d8d6" stroke-width="3"/>
+<path d="M30 104 Q46 100 61 112 V259 Q43 273 23 255 Z" fill="#383c40" opacity=".66"/>
+<circle cx="400" cy="178" r="157" fill="#c8c9c7" stroke="#545759" stroke-width="3"/>
+<circle cx="400" cy="178" r="148" fill="url(#rim)" stroke="#30343a" stroke-width="5"/>
+<circle cx="400" cy="178" r="134" fill="#17191c" stroke="#81878b" stroke-width="2"/>
+<circle cx="400" cy="178" r="120" fill="url(#rings)" stroke="#090a0d" stroke-width="7"/>
+<circle cx="400" cy="178" r="82.94" fill="url(#glass)" stroke="#424b57" stroke-width="6"/>
+<circle cx="400" cy="178" r="44.33" fill="url(#glasscenter)" />
+<ellipse cx="375.69" cy="143.68" rx="27.17" ry="14.3" fill="#aec6f2" opacity=".2" transform="rotate(-32 375.69 143.68)"/>
+<circle cx="119" cy="181" r="7" fill="#52575b"/><path d="M115 147 Q120 139 125 147" stroke="#ffffff" opacity=".65" fill="none"/>
+</g></svg>
