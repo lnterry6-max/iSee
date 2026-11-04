@@ -1,0 +1,66 @@
+name: Validate & deploy iSee
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JavaScript
+        run: node --check script.js
+      - name: Validate static asset links and structure
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          class Check(HTMLParser):
+              def __init__(self): super().__init__(); self.refs=[]; self.ids=set()
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  if "id" in d: self.ids.add(d["id"])
+                  for key in ("src","href"):
+                      value=d.get(key,"")
+                      if not value or value.startswith(("http:","https:","mailto:","data:")): continue
+                      self.refs.append(value)
+          root=Path(".")
+          p=Check()
+          p.feed((root/"index.html").read_text())
+          errors=[]
+          for ref in p.refs:
+              if ref.startswith("#"):
+                  if ref[1:] not in p.ids: errors.append("Missing anchor: "+ref)
+              elif not (root/ref.split("#")[0]).is_file(): errors.append("Missing asset: "+ref)
+          if errors: raise SystemExit("\n".join(errors))
+          print("Validated",len(p.refs),"local links and anchors")
+          PY
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
